@@ -72,6 +72,10 @@
             </div>
         </nav>
 
+        
+        @include('admin.partials.header')
+       
+
         <main class="py-4">
             @yield('content')
         </main>

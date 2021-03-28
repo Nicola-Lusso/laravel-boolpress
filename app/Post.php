@@ -9,7 +9,7 @@ class Post extends Model
 {
     protected $fillable = [
 
-        'title', 'slug', 'content'
+        'title', 'slug', 'content', 'user_id'
     ];
 
 
@@ -17,6 +17,10 @@ class Post extends Model
 
         return $this->belongsTo('App\User');
         
+    }
+
+    public function tags() {
+        return $this->belongsToMany('App\Tag');
     }
     
 }
