@@ -12,6 +12,10 @@
             <input type="text" class="form-control" name="title" id="title">
         </div>
         <div class="form-group">
+            <label for="immagine">Add file</label>
+            <input type="file" class="form-control-file" id="immagine" name="image">
+          </div>
+        <div class="form-group">
             <label for="content">content</label>
             <textarea class="form-control" name="content" id="content" rows="3"></textarea>
         </div>

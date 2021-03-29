@@ -25,4 +25,22 @@ class HomeController extends Controller
     {
         return view('guest.home');
     }
+
+    public function contatti()
+    {
+        return view('guest.contatti');
+    }
+
+
+    public function contattiSent(Request $request)
+    {
+        $data = $request->all();
+        $newLead = new Lead();
+        $newLead->fill($data);
+        $newLead->save();
+        Mail::to( 'info@boolpress.com' )->send(new SendNewMail($newLead));
+
+        
+        return redirect()->route('guest.contatti')->with('status', 'messaggio inviato');
+    }
 }
